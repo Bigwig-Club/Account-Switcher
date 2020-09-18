@@ -17,10 +17,6 @@ extension AccountSwitcher {
         tell application "App Store" to activate
         tell application "System Events" to tell process "App Store"
             set frontmost to true
-            if exists sheet 1 of window 1 then
-                key code 53
-                delay 0.5
-            end if
             try
                 click last menu item of menu 4 of menu bar 1
             end try
@@ -33,11 +29,11 @@ extension AccountSwitcher {
             key code 51
             delay 0.5
             keystroke "\(account)"
-            delay 0.5
+            delay 1
             keystroke return
-            delay 0.5
+            delay 1
             keystroke "\(password)"
-            delay 0.5
+            delay 1
             keystroke return
         end tell
         """
