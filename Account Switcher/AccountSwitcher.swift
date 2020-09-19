@@ -26,6 +26,10 @@ extension AccountSwitcher {
                 end try
                 delay 0.2
             end repeat
+            delay 0.5
+            key code 56
+            key code 48
+            delay 0.5
             key code 51
             delay 0.5
             keystroke "\(account)"
