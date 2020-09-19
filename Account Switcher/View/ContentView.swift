@@ -12,32 +12,57 @@ struct ContentView: View {
     @Default(.accounts) var accounts
     @State private var showAddAccountSheet = false
     
+    var version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    var build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    
     var body: some View {
-        List {
-            Button {
-                self.showAddAccountSheet.toggle()
-            } label: {
-                HStack {
-                    Spacer()
-                    Image("add")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(.primary)
+        ZStack(alignment: .bottomTrailing) {
+            List {
+                Button {
+                    self.showAddAccountSheet.toggle()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Image("add")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundColor(.primary)
+                    }
+                }
+                .buttonStyle(PlainButtonStyle())
+                
+                if accounts.count == 0 {
+                    Text("Please add an account")
+                        .font(.largeTitle)
+                        .foregroundColor(.secondary)
+                } else {
+                    ForEach(accounts, id: \.account) { account in
+                        AccountListCell(account: account)
+                            .padding()
+                    }
+                    .onMove(perform: moveAccount)
                 }
             }
-            .buttonStyle(PlainButtonStyle())
             
-            if accounts.count == 0 {
-                Text("Please add an account")
-                    .font(.largeTitle)
-                    .foregroundColor(.secondary)
-            } else {
-                ForEach(accounts, id: \.account) { account in
-                    AccountListCell(account: account)
-                        .padding()
+            HStack(spacing: 4) {
+                Text("Made with")
+                Image("heartFill")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+                Text("by")
+                Button {
+                    if let url = URL(string: "https://licardo.cn") {
+                        NSWorkspace.shared.open(url)
+                    }
+                } label: {
+                    Text("Licardo")
                 }
-                .onMove(perform: moveAccount)
+                .buttonStyle(PlainButtonStyle())
+                Text("-")
+                Text("v\(version)(\(build))")
             }
+            .foregroundColor(.secondary)
+            .padding(6)
         }
         .sheet(isPresented: $showAddAccountSheet) {
             AddAccountView()

@@ -68,6 +68,20 @@ struct AccountListCell: View {
                 .buttonStyle(PlainButtonStyle())
             }
         }
+        .contextMenu {
+            Button{
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(account.account, forType: .string)
+            } label: {
+                Text("Copy Account")
+            }
+            Button{
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(account.password, forType: .string)
+            } label: {
+                Text("Copy Password")
+            }
+        }
         .popover(isPresented: $showEditAccountSheet, arrowEdge: .bottom) {
             EditAccountView(selectedAccount: account)
         }
