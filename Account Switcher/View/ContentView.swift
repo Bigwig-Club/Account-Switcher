@@ -38,7 +38,7 @@ struct ContentView: View {
                 } else {
                     ForEach(accounts, id: \.account) { account in
                         AccountListCell(account: account)
-                            .padding()
+                            .padding(.vertical, 6)
                     }
                     .onMove(perform: moveAccount)
                 }

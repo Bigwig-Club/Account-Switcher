@@ -13,6 +13,7 @@ struct AccountListCell: View {
     @Default(.accounts) var accounts
     @State private var showPassword = false
     @State private var showEditAccountSheet = false
+    @State private var showAlert = false
     
     var body: some View {
         HStack {
@@ -51,6 +52,7 @@ struct AccountListCell: View {
                     }
                     
                     Button {
+                        //self.showAlert.toggle()
                         AccountSwitcher.shared.switchAccount(account: account.account, password: account.password)
                     } label: {
                         Text("Login")
@@ -68,23 +70,35 @@ struct AccountListCell: View {
                 .buttonStyle(PlainButtonStyle())
             }
         }
-        .contextMenu {
-            Button{
-                NSPasteboard.general.clearContents()
-                NSPasteboard.general.setString(account.account, forType: .string)
-            } label: {
-                Text("Copy Account")
-            }
-            Button{
-                NSPasteboard.general.clearContents()
-                NSPasteboard.general.setString(account.password, forType: .string)
-            } label: {
-                Text("Copy Password")
-            }
-        }
+//        .contextMenu {
+//            Button{
+//                NSPasteboard.general.clearContents()
+//                NSPasteboard.general.setString(account.account, forType: .string)
+//            } label: {
+//                Text("Copy Account")
+//            }
+//            Button{
+//                NSPasteboard.general.clearContents()
+//                NSPasteboard.general.setString(account.password, forType: .string)
+//            } label: {
+//                Text("Copy Password")
+//            }
+//        }
         .popover(isPresented: $showEditAccountSheet, arrowEdge: .bottom) {
             EditAccountView(selectedAccount: account)
         }
+        //        .alert(isPresented: $showAlert) {
+        //            Alert(title: Text("Tips"),
+        //                  message: Text("""
+        //                    1. You need to go to "System Preferences > Security and Privacy > Accessibility" to turn on Account Switcher.
+        //                    2. Do not do any operations during the login process, such as moving the mouse, switching windows, dragging windows, etc.
+        //                    """),
+        //                  primaryButton: .default(Text("OK"), action: {
+        //                    AccountSwitcher.shared.switchAccount(account: account.account, password: account.password)
+        //                  }),
+        //                  secondaryButton: .cancel()
+        //            )
+        //        }
     }
 }
 
