@@ -10,6 +10,11 @@ brew tap bigwig-club/brew
 brew cask install bigwig-club/brew/account-switcher
 ```
 
+## Uninstall
+```zsh
+brew cask zap bigwig-club/brew/account-switcher
+```
+
 ## Demo
 ![](demo.gif)
 
