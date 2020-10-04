@@ -12,3 +12,6 @@ brew cask install bigwig-club/brew/account-switcher
 
 ## Demo
 ![](demo.gif)
+
+## License
+Apache License 2.0
