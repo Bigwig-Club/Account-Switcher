@@ -48,13 +48,13 @@ extension AccountSwitcher {
         var errorInfo: NSDictionary? = nil
         appleScript.executeAndReturnError(&errorInfo)
         if errorInfo != nil {
-            showErrorAlert()
+            showErrorAlert(err: errorInfo as? [String : Any])
         }
     }
     
-    func showErrorAlert() {
+    func showErrorAlert(err: [String: Any]?) {
         let alert = NSAlert()
-        alert.messageText = "Sorry, some errors occured. :("
+        alert.messageText = (err?["NSAppleScriptErrorBriefMessage"] as? String) ?? "Sorry, some errors occured. :("
         alert.informativeText = "Please try again."
         alert.addButton(withTitle: "OK")
         alert.runModal()
