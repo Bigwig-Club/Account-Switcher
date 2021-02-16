@@ -7,12 +7,12 @@ All your data is stored **on your computer**, Account Switcher **DO NOT** collec
 ## Install
 ```zsh
 brew tap bigwig-club/brew
-brew cask install bigwig-club/brew/account-switcher
+brew install bigwig-club/brew/account-switcher --cask 
 ```
 
 ## Uninstall
 ```zsh
-brew cask zap bigwig-club/brew/account-switcher
+brew uninstall bigwig-club/brew/account-switcher --zap
 ```
 
 ## Demo
