@@ -53,7 +53,7 @@ struct AccountListCell: View {
                     
                     Button {
                         //self.showAlert.toggle()
-                        AccountSwitcher.shared.switchAccount(account: account.account, password: account.password)
+                        Tools.shared.switchAccount(account: account.account, password: account.password)
                     } label: {
                         Text("Login")
                     }
@@ -62,43 +62,42 @@ struct AccountListCell: View {
                 Button {
                     accounts.removeAll {$0.account == self.account.account}
                 } label: {
-                    Image("trash")
-                        .resizable()
-                        .frame(width: 15, height: 15)
+                    Image(systemName: "trash")
+                        .font(.system(size: 15))
                         .foregroundColor(.red)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
         }
-//        .contextMenu {
-//            Button{
-//                NSPasteboard.general.clearContents()
-//                NSPasteboard.general.setString(account.account, forType: .string)
-//            } label: {
-//                Text("Copy Account")
-//            }
-//            Button{
-//                NSPasteboard.general.clearContents()
-//                NSPasteboard.general.setString(account.password, forType: .string)
-//            } label: {
-//                Text("Copy Password")
-//            }
-//        }
+        .contextMenu {
+            Button{
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(account.account, forType: .string)
+            } label: {
+                Text("Copy Account")
+            }
+            Button{
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(account.password, forType: .string)
+            } label: {
+                Text("Copy Password")
+            }
+        }
         .popover(isPresented: $showEditAccountSheet, arrowEdge: .bottom) {
             EditAccountView(selectedAccount: account)
         }
-        //        .alert(isPresented: $showAlert) {
-        //            Alert(title: Text("Tips"),
-        //                  message: Text("""
-        //                    1. You need to go to "System Preferences > Security and Privacy > Accessibility" to turn on Account Switcher.
-        //                    2. Do not do any operations during the login process, such as moving the mouse, switching windows, dragging windows, etc.
-        //                    """),
-        //                  primaryButton: .default(Text("OK"), action: {
-        //                    AccountSwitcher.shared.switchAccount(account: account.account, password: account.password)
-        //                  }),
-        //                  secondaryButton: .cancel()
-        //            )
-        //        }
+//                .alert(isPresented: $showAlert) {
+//                    Alert(title: Text("Tips"),
+//                          message: Text("""
+//                            1. You need to go to "System Preferences > Security and Privacy > Accessibility" to turn on Account Switcher.
+//                            2. Do not do any operations during the login process, such as moving the mouse, switching windows, dragging windows, etc.
+//                            """),
+//                          primaryButton: .default(Text("OK"), action: {
+//                            Tools.shared.switchAccount(account: account.account, password: account.password)
+//                          }),
+//                          secondaryButton: .cancel()
+//                    )
+//                }
     }
 }
 

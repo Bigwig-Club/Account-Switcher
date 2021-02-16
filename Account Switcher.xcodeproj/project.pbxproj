@@ -7,111 +7,133 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		965EA2BD2513AB1A0030EC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2BC2513AB1A0030EC98 /* AppDelegate.swift */; };
-		965EA2BF2513AB1A0030EC98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2BE2513AB1A0030EC98 /* ContentView.swift */; };
-		965EA2C12513AB1C0030EC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965EA2C02513AB1C0030EC98 /* Assets.xcassets */; };
-		965EA2C42513AB1C0030EC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965EA2C32513AB1C0030EC98 /* Preview Assets.xcassets */; };
-		965EA2C72513AB1C0030EC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965EA2C52513AB1C0030EC98 /* Main.storyboard */; };
-		965EA2D12513AB490030EC98 /* AccountSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2D02513AB490030EC98 /* AccountSwitcher.swift */; };
-		965EA2D42513AC8E0030EC98 /* AccountListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2D32513AC8E0030EC98 /* AccountListCell.swift */; };
-		965EA2E32513B1180030EC98 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 965EA2E22513B1180030EC98 /* Defaults */; };
-		965EA2E62513B1210030EC98 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2E52513B1210030EC98 /* DefaultKeys.swift */; };
-		965EA2E92513B14E0030EC98 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2E82513B14E0030EC98 /* Account.swift */; };
-		965EA2ED2513B5750030EC98 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA2EC2513B5750030EC98 /* AddAccountView.swift */; };
-		967D10AA251485B2004ADA33 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D10A9251485B2004ADA33 /* EditAccountView.swift */; };
+		96148A5E25DB6F800081F81B /* Account_SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A5D25DB6F800081F81B /* Account_SwitcherApp.swift */; };
+		96148A6025DB6F800081F81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A5F25DB6F800081F81B /* ContentView.swift */; };
+		96148A6225DB6F810081F81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96148A6125DB6F810081F81B /* Assets.xcassets */; };
+		96148A6525DB6F810081F81B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96148A6425DB6F810081F81B /* Preview Assets.xcassets */; };
+		96148A7025DB6FAD0081F81B /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 96148A6F25DB6FAD0081F81B /* Defaults */; };
+		96148A7525DB6FD80081F81B /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A7225DB6FD80081F81B /* AddAccountView.swift */; };
+		96148A7625DB6FD80081F81B /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A7325DB6FD80081F81B /* EditAccountView.swift */; };
+		96148A7725DB6FD80081F81B /* AccountListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A7425DB6FD80081F81B /* AccountListCell.swift */; };
+		96148A7E25DB6FF80081F81B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A7C25DB6FF70081F81B /* Account.swift */; };
+		96148A7F25DB6FF80081F81B /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A7D25DB6FF70081F81B /* DefaultKeys.swift */; };
+		96148A8325DB70870081F81B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A8225DB70870081F81B /* Tools.swift */; };
+		96148A8825DB731E0081F81B /* PasswordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96148A8725DB731E0081F81B /* PasswordListView.swift */; };
+		964270D625DB77AF007E05FC /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964270D525DB77AF007E05FC /* LockView.swift */; };
+		964270DA25DB8B51007E05FC /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964270D925DB8B51007E05FC /* SidebarView.swift */; };
+		964270DD25DB9577007E05FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964270DC25DB9577007E05FC /* SettingsView.swift */; };
+		964270E125DB966E007E05FC /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 964270E025DB966E007E05FC /* CSV */; };
+		964270E525DB99B7007E05FC /* FilePanel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964270E425DB99B7007E05FC /* FilePanel+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		965EA2B92513AB1A0030EC98 /* Account Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Account Switcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		965EA2BC2513AB1A0030EC98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		965EA2BE2513AB1A0030EC98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		965EA2C02513AB1C0030EC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		965EA2C32513AB1C0030EC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		965EA2C62513AB1C0030EC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		965EA2C82513AB1C0030EC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		965EA2C92513AB1C0030EC98 /* Account_Switcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Account_Switcher.entitlements; sourceTree = "<group>"; };
-		965EA2D02513AB490030EC98 /* AccountSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSwitcher.swift; sourceTree = "<group>"; };
-		965EA2D32513AC8E0030EC98 /* AccountListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListCell.swift; sourceTree = "<group>"; };
-		965EA2E52513B1210030EC98 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
-		965EA2E82513B14E0030EC98 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		965EA2EC2513B5750030EC98 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
-		967D10A9251485B2004ADA33 /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		96148A5A25DB6F800081F81B /* Account Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Account Switcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96148A5D25DB6F800081F81B /* Account_SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_SwitcherApp.swift; sourceTree = "<group>"; };
+		96148A5F25DB6F800081F81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		96148A6125DB6F810081F81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96148A6425DB6F810081F81B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96148A6625DB6F810081F81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96148A6725DB6F810081F81B /* Account_Switcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Account_Switcher.entitlements; sourceTree = "<group>"; };
+		96148A7225DB6FD80081F81B /* AddAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
+		96148A7325DB6FD80081F81B /* EditAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		96148A7425DB6FD80081F81B /* AccountListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListCell.swift; sourceTree = "<group>"; };
+		96148A7C25DB6FF70081F81B /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		96148A7D25DB6FF70081F81B /* DefaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		96148A8225DB70870081F81B /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		96148A8725DB731E0081F81B /* PasswordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListView.swift; sourceTree = "<group>"; };
+		964270D525DB77AF007E05FC /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		964270D925DB8B51007E05FC /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		964270DC25DB9577007E05FC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		964270E425DB99B7007E05FC /* FilePanel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FilePanel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		965EA2B62513AB1A0030EC98 /* Frameworks */ = {
+		96148A5725DB6F800081F81B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965EA2E32513B1180030EC98 /* Defaults in Frameworks */,
+				96148A7025DB6FAD0081F81B /* Defaults in Frameworks */,
+				964270E125DB966E007E05FC /* CSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		965EA2B02513AB1A0030EC98 = {
+		96148A5125DB6F800081F81B = {
 			isa = PBXGroup;
 			children = (
-				965EA2BB2513AB1A0030EC98 /* Account Switcher */,
-				965EA2BA2513AB1A0030EC98 /* Products */,
+				96148A5C25DB6F800081F81B /* Account Switcher */,
+				96148A5B25DB6F800081F81B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		965EA2BA2513AB1A0030EC98 /* Products */ = {
+		96148A5B25DB6F800081F81B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				965EA2B92513AB1A0030EC98 /* Account Switcher.app */,
+				96148A5A25DB6F800081F81B /* Account Switcher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		965EA2BB2513AB1A0030EC98 /* Account Switcher */ = {
+		96148A5C25DB6F800081F81B /* Account Switcher */ = {
 			isa = PBXGroup;
 			children = (
-				965EA2BC2513AB1A0030EC98 /* AppDelegate.swift */,
-				9684AD84251495E400DFD231 /* View */,
-				965EA2E52513B1210030EC98 /* DefaultKeys.swift */,
-				965EA2D02513AB490030EC98 /* AccountSwitcher.swift */,
-				965EA2E82513B14E0030EC98 /* Account.swift */,
-				965EA2C02513AB1C0030EC98 /* Assets.xcassets */,
-				965EA2C52513AB1C0030EC98 /* Main.storyboard */,
-				965EA2C82513AB1C0030EC98 /* Info.plist */,
-				965EA2C92513AB1C0030EC98 /* Account_Switcher.entitlements */,
-				965EA2C22513AB1C0030EC98 /* Preview Content */,
+				96148A5D25DB6F800081F81B /* Account_SwitcherApp.swift */,
+				96148A7C25DB6FF70081F81B /* Account.swift */,
+				96148A8225DB70870081F81B /* Tools.swift */,
+				96148A7D25DB6FF70081F81B /* DefaultKeys.swift */,
+				96148A7925DB6FE60081F81B /* Views */,
+				964270E725DB99C2007E05FC /* Extension */,
+				96148A6125DB6F810081F81B /* Assets.xcassets */,
+				96148A6625DB6F810081F81B /* Info.plist */,
+				96148A6725DB6F810081F81B /* Account_Switcher.entitlements */,
+				96148A6325DB6F810081F81B /* Preview Content */,
 			);
 			path = "Account Switcher";
 			sourceTree = "<group>";
 		};
-		965EA2C22513AB1C0030EC98 /* Preview Content */ = {
+		96148A6325DB6F810081F81B /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				965EA2C32513AB1C0030EC98 /* Preview Assets.xcassets */,
+				96148A6425DB6F810081F81B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9684AD84251495E400DFD231 /* View */ = {
+		96148A7925DB6FE60081F81B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				965EA2BE2513AB1A0030EC98 /* ContentView.swift */,
-				965EA2D32513AC8E0030EC98 /* AccountListCell.swift */,
-				965EA2EC2513B5750030EC98 /* AddAccountView.swift */,
-				967D10A9251485B2004ADA33 /* EditAccountView.swift */,
+				964270D925DB8B51007E05FC /* SidebarView.swift */,
+				96148A5F25DB6F800081F81B /* ContentView.swift */,
+				96148A8725DB731E0081F81B /* PasswordListView.swift */,
+				96148A7425DB6FD80081F81B /* AccountListCell.swift */,
+				96148A7225DB6FD80081F81B /* AddAccountView.swift */,
+				96148A7325DB6FD80081F81B /* EditAccountView.swift */,
+				964270D525DB77AF007E05FC /* LockView.swift */,
+				964270DC25DB9577007E05FC /* SettingsView.swift */,
 			);
-			path = View;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		964270E725DB99C2007E05FC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				964270E425DB99B7007E05FC /* FilePanel+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		965EA2B82513AB1A0030EC98 /* Account Switcher */ = {
+		96148A5925DB6F800081F81B /* Account Switcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 965EA2CC2513AB1C0030EC98 /* Build configuration list for PBXNativeTarget "Account Switcher" */;
+			buildConfigurationList = 96148A6A25DB6F810081F81B /* Build configuration list for PBXNativeTarget "Account Switcher" */;
 			buildPhases = (
-				965EA2B52513AB1A0030EC98 /* Sources */,
-				965EA2B62513AB1A0030EC98 /* Frameworks */,
-				965EA2B72513AB1A0030EC98 /* Resources */,
+				96148A5625DB6F800081F81B /* Sources */,
+				96148A5725DB6F800081F81B /* Frameworks */,
+				96148A5825DB6F800081F81B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -119,27 +141,28 @@
 			);
 			name = "Account Switcher";
 			packageProductDependencies = (
-				965EA2E22513B1180030EC98 /* Defaults */,
+				96148A6F25DB6FAD0081F81B /* Defaults */,
+				964270E025DB966E007E05FC /* CSV */,
 			);
 			productName = "Account Switcher";
-			productReference = 965EA2B92513AB1A0030EC98 /* Account Switcher.app */;
+			productReference = 96148A5A25DB6F800081F81B /* Account Switcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		965EA2B12513AB1A0030EC98 /* Project object */ = {
+		96148A5225DB6F800081F81B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					965EA2B82513AB1A0030EC98 = {
-						CreatedOnToolsVersion = 12.0;
+					96148A5925DB6F800081F81B = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 965EA2B42513AB1A0030EC98 /* Build configuration list for PBXProject "Account Switcher" */;
+			buildConfigurationList = 96148A5525DB6F800081F81B /* Build configuration list for PBXProject "Account Switcher" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,63 +170,57 @@
 				en,
 				Base,
 			);
-			mainGroup = 965EA2B02513AB1A0030EC98;
+			mainGroup = 96148A5125DB6F800081F81B;
 			packageReferences = (
-				965EA2E12513B1180030EC98 /* XCRemoteSwiftPackageReference "Defaults" */,
+				96148A6E25DB6FAD0081F81B /* XCRemoteSwiftPackageReference "Defaults" */,
+				964270DF25DB966E007E05FC /* XCRemoteSwiftPackageReference "CSV" */,
 			);
-			productRefGroup = 965EA2BA2513AB1A0030EC98 /* Products */;
+			productRefGroup = 96148A5B25DB6F800081F81B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				965EA2B82513AB1A0030EC98 /* Account Switcher */,
+				96148A5925DB6F800081F81B /* Account Switcher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		965EA2B72513AB1A0030EC98 /* Resources */ = {
+		96148A5825DB6F800081F81B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965EA2C72513AB1C0030EC98 /* Main.storyboard in Resources */,
-				965EA2C42513AB1C0030EC98 /* Preview Assets.xcassets in Resources */,
-				965EA2C12513AB1C0030EC98 /* Assets.xcassets in Resources */,
+				96148A6525DB6F810081F81B /* Preview Assets.xcassets in Resources */,
+				96148A6225DB6F810081F81B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		965EA2B52513AB1A0030EC98 /* Sources */ = {
+		96148A5625DB6F800081F81B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965EA2BF2513AB1A0030EC98 /* ContentView.swift in Sources */,
-				965EA2D42513AC8E0030EC98 /* AccountListCell.swift in Sources */,
-				965EA2E62513B1210030EC98 /* DefaultKeys.swift in Sources */,
-				965EA2BD2513AB1A0030EC98 /* AppDelegate.swift in Sources */,
-				965EA2D12513AB490030EC98 /* AccountSwitcher.swift in Sources */,
-				965EA2E92513B14E0030EC98 /* Account.swift in Sources */,
-				967D10AA251485B2004ADA33 /* EditAccountView.swift in Sources */,
-				965EA2ED2513B5750030EC98 /* AddAccountView.swift in Sources */,
+				96148A7725DB6FD80081F81B /* AccountListCell.swift in Sources */,
+				96148A7F25DB6FF80081F81B /* DefaultKeys.swift in Sources */,
+				964270E525DB99B7007E05FC /* FilePanel+Extension.swift in Sources */,
+				96148A6025DB6F800081F81B /* ContentView.swift in Sources */,
+				964270D625DB77AF007E05FC /* LockView.swift in Sources */,
+				96148A8825DB731E0081F81B /* PasswordListView.swift in Sources */,
+				96148A5E25DB6F800081F81B /* Account_SwitcherApp.swift in Sources */,
+				96148A7625DB6FD80081F81B /* EditAccountView.swift in Sources */,
+				964270DA25DB8B51007E05FC /* SidebarView.swift in Sources */,
+				96148A7525DB6FD80081F81B /* AddAccountView.swift in Sources */,
+				964270DD25DB9577007E05FC /* SettingsView.swift in Sources */,
+				96148A8325DB70870081F81B /* Tools.swift in Sources */,
+				96148A7E25DB6FF80081F81B /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		965EA2C52513AB1C0030EC98 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				965EA2C62513AB1C0030EC98 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		965EA2CA2513AB1C0030EC98 /* Debug */ = {
+		96148A6825DB6F810081F81B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -264,7 +281,7 @@
 			};
 			name = Debug;
 		};
-		965EA2CB2513AB1C0030EC98 /* Release */ = {
+		96148A6925DB6F810081F81B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -309,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -318,16 +335,15 @@
 			};
 			name = Release;
 		};
-		965EA2CD2513AB1C0030EC98 /* Debug */ = {
+		96148A6B25DB6F810081F81B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Account Switcher/Account_Switcher.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Account Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 2U23P5CPX2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -337,24 +353,23 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.licardo.Account-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		965EA2CE2513AB1C0030EC98 /* Release */ = {
+		96148A6C25DB6F810081F81B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Account Switcher/Account_Switcher.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Account Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 2U23P5CPX2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -364,8 +379,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.licardo.Account-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -375,20 +390,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		965EA2B42513AB1A0030EC98 /* Build configuration list for PBXProject "Account Switcher" */ = {
+		96148A5525DB6F800081F81B /* Build configuration list for PBXProject "Account Switcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				965EA2CA2513AB1C0030EC98 /* Debug */,
-				965EA2CB2513AB1C0030EC98 /* Release */,
+				96148A6825DB6F810081F81B /* Debug */,
+				96148A6925DB6F810081F81B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		965EA2CC2513AB1C0030EC98 /* Build configuration list for PBXNativeTarget "Account Switcher" */ = {
+		96148A6A25DB6F810081F81B /* Build configuration list for PBXNativeTarget "Account Switcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				965EA2CD2513AB1C0030EC98 /* Debug */,
-				965EA2CE2513AB1C0030EC98 /* Release */,
+				96148A6B25DB6F810081F81B /* Debug */,
+				96148A6C25DB6F810081F81B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -396,7 +411,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		965EA2E12513B1180030EC98 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+		96148A6E25DB6FAD0081F81B /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
 			requirement = {
@@ -404,15 +419,28 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		964270DF25DB966E007E05FC /* XCRemoteSwiftPackageReference "CSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		965EA2E22513B1180030EC98 /* Defaults */ = {
+		96148A6F25DB6FAD0081F81B /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 965EA2E12513B1180030EC98 /* XCRemoteSwiftPackageReference "Defaults" */;
+			package = 96148A6E25DB6FAD0081F81B /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		964270E025DB966E007E05FC /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 964270DF25DB966E007E05FC /* XCRemoteSwiftPackageReference "CSV" */;
+			productName = CSV;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 965EA2B12513AB1A0030EC98 /* Project object */;
+	rootObject = 96148A5225DB6F800081F81B /* Project object */;
 }
