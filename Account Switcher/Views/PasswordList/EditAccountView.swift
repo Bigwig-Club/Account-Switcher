@@ -25,16 +25,16 @@ struct EditAccountView: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack {
-                    Text("Custom Name")
-                    TextField("Please enter a custom name", text: $customName)
+                    Text("Custom Name".localized)
+                    TextField("".localized, text: $customName)
                 }
                 HStack {
-                    Text("Account")
-                    TextField("Please enter Apple ID account", text: $account)
+                    Text("Apple ID")
+                    TextField("".localized, text: $account)
                 }
                 HStack {
-                    Text("Password")
-                    TextField("Please enter Apple ID password", text: $password)
+                    Text("Password".localized)
+                    TextField("".localized, text: $password)
                 }
             }
             
@@ -42,21 +42,23 @@ struct EditAccountView: View {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Cancel")
+                    Text("Cancel".localized)
                 }
+                .buttonStyle(CustomButtonStyle())
                 
                 Button {
                     saveAccount()
                 } label: {
-                    Text("Save")
+                    Text("Save".localized)
                 }
+                .buttonStyle(CustomButtonStyle())
                 .disabled(self.customName.isEmpty || self.account.isEmpty || self.password.isEmpty)
             }
         }
         .frame(width: 300, height: 100, alignment: .center)
         .padding()
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Duplicate Account"), message: Text("You have already added this account, please try add another account or edit this one"), dismissButton: .cancel(Text("OK")))
+            Alert(title: Text("Duplicated Apple ID".localized), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one".localized), dismissButton: .cancel(Text("OK")))
         }
         .onAppear {
             self.customName = selectedAccount.customName
@@ -74,7 +76,7 @@ struct EditAccountView: View {
 }
 
 struct EditAccountView_Previews: PreviewProvider {
-    static let account = Account(customName: "中国 ID", account: "1014660822@qq.com", password: "123123")
+    static let account = Account(customName: "中国 ID", account: "xxx@qq.com", password: "123123")
     
     static var previews: some View {
         EditAccountView(selectedAccount: account)

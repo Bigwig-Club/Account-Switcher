@@ -14,12 +14,12 @@ struct Account_SwitcherApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 600, idealWidth: 600, maxWidth: .infinity, minHeight: 300, idealHeight: 300, maxHeight: .infinity, alignment: .center)
-            //.navigationTitle("Account Switcher")
+                .frame(minWidth: 620, idealWidth: 620, maxWidth: .infinity, minHeight: 300, idealHeight: 300, maxHeight: .infinity, alignment: .center)
         }
-        .windowStyle(HiddenTitleBarWindowStyle())
+        //.windowStyle(HiddenTitleBarWindowStyle())
         .commands {
             SidebarCommands()
+            ToolbarCommands()
         }
     }
 }

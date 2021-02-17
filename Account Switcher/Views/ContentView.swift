@@ -16,6 +16,7 @@ struct ContentView: View {
             if isUnlocked {
                 NavigationView {
                     SidebarView(isUnlocked: $isUnlocked)
+                        .frame(minWidth: 120, idealWidth: 120, idealHeight: 300, maxHeight: .infinity, alignment: .center)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigation) {

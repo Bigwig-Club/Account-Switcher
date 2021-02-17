@@ -15,12 +15,16 @@ struct SidebarView: View {
     var body: some View {
         List(selection: $selection) {
             NavigationLink(destination: PasswordListView(isUnlocked: $isUnlocked)) {
-                Label("Passwords", systemImage: "key")
+                Label("Password".localized, systemImage: "key")
             }.tag(0)
             
-            NavigationLink(destination: SettingsView()) {
-                Label("Settings", systemImage: "gearshape")
+            NavigationLink(destination: QuickLoginView()) {
+                Label("Quick Login".localized, systemImage: "bolt")
             }.tag(1)
+            
+            NavigationLink(destination: SettingsView()) {
+                Label("Settings".localized, systemImage: "gearshape")
+            }.tag(2)
         }
         .listStyle(SidebarListStyle())
     }

@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Account Switcher
+
+  Created by Licardo on 2021/2/17.
+  
+*/
+
+// lockView
+"UNLOCK" = "解锁";
+"Please authenticate to unlock." = "请授权以解锁.";
+
+// sidebar
+"Password" = "密码";
+"Quick Login" = "快速登录";
+"Settings" = "设置";
+
+// password list
+"Please add an Apple ID" = "请添加一个 Apple ID";
+"Import" = "导入";
+"Export" = "导出";
+"Edit" = "编辑";
+"Login" = "登录";
+"Copy Apple ID" = "复制 Apple ID";
+"Copy Password" = "复制密码";
+"Custom Name" = "自定义名称";
+"Cancel" = "取消";
+"Add" = "添加";
+"Save" = "保存";
+"Duplicated Apple ID" = "重复的 Account";
+"You have already added this Apple ID, please try to add another Apple ID or edit this one" = "您已添加了这个 Apple ID，请添加另外一个或者编辑这一个";
+
+// setting
+"Always need authentication to unlock" = "总是需要授权来解锁";
+"Login speed" = "登录速度";
+"If you CAN NOT login successfully, try to slow down the speed" = "如果您不能成功登录，请试试降低速度";
+"Project page" = "项目主页";

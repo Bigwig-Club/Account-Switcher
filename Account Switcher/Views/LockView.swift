@@ -30,7 +30,7 @@ struct LockView: View {
                     Image(systemName: "touchid")
                         .foregroundColor(.white)
                         .font(.system(size: 25))
-                    Text("UNLOCK")
+                    Text("UNLOCK".localized)
                         .foregroundColor(.white)
                         .font(.system(size: 20))
                 }
@@ -54,7 +54,7 @@ struct LockView: View {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-            let reason = "Please authenticate yourself to unlock."
+            let reason = "Please authenticate to unlock.".localized
             
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, authenticationError in
                 

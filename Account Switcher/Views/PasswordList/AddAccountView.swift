@@ -22,16 +22,16 @@ struct AddAccountView: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack {
-                    Text("Custom Name")
-                    TextField("Please enter a custom name", text: $customName)
+                    Text("Custom Name".localized)
+                    TextField("", text: $customName)
                 }
                 HStack {
-                    Text("Account")
-                    TextField("Please enter Apple ID account", text: $account)
+                    Text("Apple ID")
+                    TextField("", text: $account)
                 }
                 HStack {
-                    Text("Password")
-                    TextField("Please enter Apple ID password", text: $password)
+                    Text("Password".localized)
+                    TextField("".localized, text: $password)
                 }
             }
             
@@ -39,19 +39,21 @@ struct AddAccountView: View {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Cancel")
+                    Text("Cancel".localized)
                 }
+                .buttonStyle(CustomButtonStyle())
                 
                 Button {
                     addAccount()
                 } label: {
-                    Text("Add")
+                    Text("Add".localized)
                 }
+                .buttonStyle(CustomButtonStyle())
                 .disabled(self.customName.isEmpty || self.account.isEmpty || self.password.isEmpty)
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Duplicate Account"), message: Text("You have already added this account, please try add another account or edit this one"), dismissButton: .cancel(Text("OK")))
+            Alert(title: Text("Duplicated Apple ID".localized), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one".localized), dismissButton: .cancel(Text("OK")))
         }
         .frame(width: 300, height: 100, alignment: .center)
         .padding()

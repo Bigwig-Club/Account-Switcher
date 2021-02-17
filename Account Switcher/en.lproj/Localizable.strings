@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Account Switcher
+
+  Created by Licardo on 2021/2/17.
+  
+*/
+
+// lockView
+"UNLOCK" = "UNLOCK";
+"Please authenticate to unlock." = "Please authenticate to unlock.";
+
+// sidebar
+"Password" = "Password";
+"Quick Login" = "Quick Login";
+"Settings" = "Settings";
+
+// password list
+"Please add an Apple ID" = "Please add an Apple ID";
+"Import" = "Import";
+"Export" = "Export";
+"Edit" = "Edit";
+"Login" = "Login";
+"Copy Apple ID" = "Copy Apple ID";
+"Copy Password" = "Copy Password";
+"Custom Name" = "Custom Name";
+"Cancel" = "Cancel";
+"Add" = "Add";
+"Save" = "Save";
+"Duplicated Account" = "Duplicated Account";
+"You have already added this Apple ID, please try to add another Apple ID or edit this one" = "You have already added this Apple ID, please try to add another Apple ID or edit this one";
+
+// setting
+"Always need authentication to unlock" = "Always need authentication to unlock";
+"Login speed" = "Login speed";
+"If you CAN NOT login successfully, try to slow down the speed" = "If you CAN NOT login successfully, try to slow down the speed";
+"Project page" = "Project page";

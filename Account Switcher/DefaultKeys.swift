@@ -10,5 +10,5 @@ import Defaults
 extension Defaults.Keys {
     static let accounts = Key<[Account]>("accounts", default: [])
     static let needAuthToUnlock = Key<Bool>("needAuthToUnlock", default: true)
-    static let authSpeed = Key<Float>("authSpeed", default: 2)
+    static let loginSpeed = Key<Float>("loginSpeed", default: 2)
 }

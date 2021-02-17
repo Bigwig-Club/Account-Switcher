@@ -48,15 +48,17 @@ struct AccountListCell: View {
                     Button {
                         self.showEditAccountSheet.toggle()
                     } label: {
-                        Text("Edit")
+                        Text("Edit".localized)
                     }
+                    .buttonStyle(CustomButtonStyle())
                     
                     Button {
                         //self.showAlert.toggle()
                         Tools.shared.switchAccount(account: account.account, password: account.password)
                     } label: {
-                        Text("Login")
+                        Text("Login".localized)
                     }
+                    .buttonStyle(CustomButtonStyle())
                 }
                 
                 Button {
@@ -74,13 +76,16 @@ struct AccountListCell: View {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.account, forType: .string)
             } label: {
-                Text("Copy Account")
+                Text("Copy Apple ID".localized)
+                Image(systemName: "person.crop.circle")
             }
+            
             Button{
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.password, forType: .string)
             } label: {
-                Text("Copy Password")
+                Text("Copy Password".localized)
+                Image(systemName: "key")
             }
         }
         .popover(isPresented: $showEditAccountSheet, arrowEdge: .bottom) {
@@ -102,7 +107,7 @@ struct AccountListCell: View {
 }
 
 struct AccountListCell_Previews: PreviewProvider {
-    static let account = Account(customName: "中国 ID", account: "1014660822@qq.com", password: "123123")
+    static let account = Account(customName: "中国 ID", account: "xxx@qq.com", password: "123123")
     
     static var previews: some View {
         AccountListCell(account: account)

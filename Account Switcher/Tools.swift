@@ -16,7 +16,7 @@ class Tools {
 // MARK: - switch account
 extension Tools {
     func switchAccount(account: String, password: String) {
-        let time = 1 / Defaults[.authSpeed]
+        let time = 1 / Defaults[.loginSpeed]
         let script = """
         tell application "App Store" to activate
         tell application "System Events" to tell process "App Store"

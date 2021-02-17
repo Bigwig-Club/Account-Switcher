@@ -16,7 +16,7 @@ struct PasswordListView: View {
     var body: some View {
         List {
             if accounts.count == 0 {
-                Text("Please add an account")
+                Text("Please add an Apple ID".localized)
                     .font(.largeTitle)
                     .foregroundColor(.secondary)
             } else {
@@ -36,17 +36,15 @@ struct PasswordListView: View {
                     Tools.shared.importPasswordsFromCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.down")
-                    Text("Import")
+                    Text("Import".localized)
                 }
                 
                 Button {
                     Tools.shared.exportPasswordsToCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.up")
-                    Text("Export")
+                    Text("Export".localized)
                 }
-                
-                Spacer()
                 
                 Button {
                     isUnlocked = false
