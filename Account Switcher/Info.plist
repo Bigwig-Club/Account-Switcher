@@ -22,6 +22,8 @@
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs Apple Event permission to login</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Please authenticate to unlock.</string>
 </dict>
