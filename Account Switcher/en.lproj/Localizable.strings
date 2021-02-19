@@ -35,3 +35,7 @@
 "Login speed" = "Login speed";
 "If you CAN NOT login successfully, try to slow down the speed" = "If you CAN NOT login successfully, try to slow down the speed";
 "Project page" = "Project page";
+
+// alert
+"Sorry, some errors occured. :(" = "Sorry, some errors occured. :(";
+"You need to go to「System Preferences > Security and Privacy > Privacy > Automation」to turn on Account Switcher." = "You need to go to「System Preferences > Security and Privacy > Privacy > Automation」to turn on Account Switcher.";

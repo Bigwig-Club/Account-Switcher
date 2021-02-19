@@ -16,6 +16,14 @@ class Tools {
 // MARK: - switch account
 extension Tools {
     func switchAccount(account: String, password: String) {
+        
+        let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
+        let options = [checkOptPrompt: true]
+        let isAppTrusted = AXIsProcessTrustedWithOptions(options as CFDictionary?);
+        guard isAppTrusted else {
+            return
+        }
+        
         let time = 1 / Defaults[.loginSpeed]
         let script = """
         tell application "App Store" to activate
@@ -44,7 +52,7 @@ extension Tools {
         guard  let appleScript = NSAppleScript(source: script) else {
             return
         }
-        var errorInfo: NSDictionary? = nil
+        var errorInfo: NSDictionary?
         appleScript.executeAndReturnError(&errorInfo)
         if errorInfo != nil {
             showErrorAlert(err: errorInfo as? [String : Any])
@@ -53,10 +61,13 @@ extension Tools {
     
     func showErrorAlert(err: [String: Any]?) {
         let alert = NSAlert()
-        alert.messageText = (err?["NSAppleScriptErrorBriefMessage"] as? String) ?? "Sorry, some errors occured. :("
-        alert.informativeText = "Please try again."
+        alert.messageText = (err?["NSAppleScriptErrorMessage"] as? String) ?? "Sorry, some errors occured. :(".localized
+        alert.informativeText = "You need to go to「System Preferences > Security and Privacy > Privacy > Automation」to turn on Account Switcher.".localized
         alert.addButton(withTitle: "OK")
-        alert.runModal()
+        let response = alert.runModal()
+        if response == .alertFirstButtonReturn {
+            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")!)
+        }
     }
 }
 
@@ -65,19 +76,19 @@ extension Tools {
     func exportPasswordsToCsv() {
         let csv = try! CSVWriter(stream: .toMemory())
         let accounts = Defaults[.accounts]
-
+        
         // Write a row
         try! csv.write(row: ["customName", "account", "password"])
-
+        
         accounts.forEach { account in
             csv.beginNewRow()
             try! csv.write(field: account.customName)
             try! csv.write(field: account.account)
             try! csv.write(field: account.password)
         }
-
+        
         csv.stream.close()
-
+        
         // Get a String
         let csvData = csv.stream.property(forKey: .dataWrittenToMemoryStreamKey) as! Data
         NSSavePanel.saveCsv(csvData) { (_) in }

@@ -35,3 +35,7 @@
 "Login speed" = "登录速度";
 "If you CAN NOT login successfully, try to slow down the speed" = "如果您不能成功登录，请试试降低速度";
 "Project page" = "项目主页";
+
+// alert
+"Sorry, some errors occured. :(" = "不好意思，发生了一点错误。 :(";
+"You need to go to「System Preferences > Security and Privacy > Privacy > Automation」to turn on Account Switcher." = "您需要前往「系统偏好设置 > 安全性与隐私 > 隐私 > 自动化」来授予 Account Switcher 权限";

@@ -19,14 +19,19 @@ struct SettingsView: View {
         List {
             Form {
                 Section(
-                    footer: HStack(alignment: .center, spacing: 4) {
-                        Spacer()
-                        Text("MADE WITH")
-                        Image("heart")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                        Text("BY LICARDO")
-                        Spacer()
+                    footer: VStack(spacing: 2) {
+                        HStack(spacing: 4) {
+                            Spacer()
+                            Text("MADE WITH")
+                            Image("heart")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                            Text("BY LICARDO")
+                            Spacer()
+                        }
+                        
+                        Text("v\(version) (\(build))")
+                            .font(.system(size: 12))
                     }
                     .foregroundColor(.secondary)
                     .padding()
