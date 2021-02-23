@@ -26,6 +26,8 @@ struct Account_SwitcherApp: App {
 
 class AppDelegate: NSResponder, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
+        NSApp.windows.forEach { $0.standardWindowButton(.zoomButton)?.isEnabled = false }
+        
         NotificationCenter.default.post(Notification(name: Notification.Name("active")))
     }
     

@@ -9,22 +9,22 @@
 import SwiftUI
 
 struct SidebarView: View {
-    @State private var selection: Set<Int> = [0]
+    @State private var isDefaultItemActive = true
     @Binding var isUnlocked: Bool
     
     var body: some View {
-        List(selection: $selection) {
-            NavigationLink(destination: PasswordListView(isUnlocked: $isUnlocked)) {
+        List {
+            NavigationLink(destination: PasswordListView(isUnlocked: $isUnlocked), isActive: $isDefaultItemActive) {
                 Label("Password".localized, systemImage: "key")
-            }.tag(0)
+            }
             
             NavigationLink(destination: QuickLoginView()) {
                 Label("Quick Login".localized, systemImage: "bolt")
-            }.tag(1)
+            }
             
             NavigationLink(destination: SettingsView()) {
                 Label("Settings".localized, systemImage: "gearshape")
-            }.tag(2)
+            }
         }
         .listStyle(SidebarListStyle())
     }

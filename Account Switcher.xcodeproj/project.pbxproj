@@ -134,13 +134,21 @@
 			isa = PBXGroup;
 			children = (
 				960D89C025DCD43A003D2506 /* PasswordList */,
+				963F6F2C25E4CDDB003641F9 /* QuickLogin */,
 				960D89C225DCD448003D2506 /* Settings */,
 				964270D525DB77AF007E05FC /* LockView.swift */,
 				964270D925DB8B51007E05FC /* SidebarView.swift */,
 				96148A5F25DB6F800081F81B /* ContentView.swift */,
-				960D89C325DCD46A003D2506 /* QuickLoginView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		963F6F2C25E4CDDB003641F9 /* QuickLogin */ = {
+			isa = PBXGroup;
+			children = (
+				960D89C325DCD46A003D2506 /* QuickLoginView.swift */,
+			);
+			path = QuickLogin;
 			sourceTree = "<group>";
 		};
 		964270E725DB99C2007E05FC /* Extension */ = {
@@ -389,7 +397,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Account Switcher/Account_Switcher.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Account Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 2U23P5CPX2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -400,7 +408,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.licardo.Account-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -415,7 +423,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Account Switcher/Account_Switcher.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Account Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 2U23P5CPX2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -426,7 +434,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.licardo.Account-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

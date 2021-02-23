@@ -10,22 +10,23 @@ import LocalAuthentication
 
 struct ContentView: View {
     @State private var isUnlocked = false
-
+    
     var body: some View {
         ZStack {
             if isUnlocked {
                 NavigationView {
                     SidebarView(isUnlocked: $isUnlocked)
-                        .frame(minWidth: 120, idealWidth: 120, idealHeight: 300, maxHeight: .infinity, alignment: .center)
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        Button {
-                            toggleSidebar()
-                        } label: {
-                            Image(systemName: "sidebar.left")
+                        .frame(minWidth: 145, idealWidth: 145, idealHeight: 300, maxHeight: .infinity, alignment: .center)
+                        .toolbar {
+                            ToolbarItem(placement: .status) {
+                                Button(action: {
+                                    toggleSidebar()
+                                }) {
+                                    Image(systemName: "sidebar.left")
+                                }
+                            }
                         }
-                    }
+                        //.presentedWindowToolbarStyle(ExpandedWindowToolbarStyle())
                 }
             } else {
                 LockView(isUnlocked: $isUnlocked.animation())
