@@ -22,7 +22,7 @@ struct AddAccountView: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack {
-                    Text("Custom Name".localized)
+                    Text("Custom Name")
                     TextField("", text: $customName)
                 }
                 HStack {
@@ -30,8 +30,8 @@ struct AddAccountView: View {
                     TextField("", text: $account)
                 }
                 HStack {
-                    Text("Password".localized)
-                    TextField("".localized, text: $password)
+                    Text("Password")
+                    TextField("", text: $password)
                 }
             }
             
@@ -39,21 +39,21 @@ struct AddAccountView: View {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Cancel".localized)
+                    Text("Cancel")
                 }
                 .buttonStyle(CustomButtonStyle())
                 
                 Button {
                     addAccount()
                 } label: {
-                    Text("Add".localized)
+                    Text("Add")
                 }
                 .buttonStyle(CustomButtonStyle())
                 .disabled(self.customName.isEmpty || self.account.isEmpty || self.password.isEmpty)
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Duplicated Apple ID".localized), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one".localized), dismissButton: .cancel(Text("OK")))
+            Alert(title: Text("Duplicated Apple ID"), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one"), dismissButton: .cancel(Text("OK")))
         }
         .frame(width: 300, height: 100, alignment: .center)
         .padding()

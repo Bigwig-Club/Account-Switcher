@@ -19,14 +19,14 @@ struct QuickLoginView: View {
                     TextField("", text: $account)
                 }
                 HStack {
-                    Text("Password".localized)
-                    TextField("".localized, text: $password)
+                    Text("Password")
+                    TextField("", text: $password)
                 }
                 
                 Button {
                     Tools.shared.switchAccount(account: account, password: password)
                 } label: {
-                    Text("Login".localized)
+                    Text("Login")
                         .padding(.horizontal)
                 }
                 .buttonStyle(CustomButtonStyle())

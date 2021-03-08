@@ -16,12 +16,12 @@ struct PasswordListView: View {
     var body: some View {
         List {
             if accounts.count == 0 {
-                Text("Please add an Apple ID".localized)
+                Text("Please add an Apple ID")
                     .font(.largeTitle)
                     .foregroundColor(.secondary)
             } else {
-                ForEach(accounts, id: \.account) { account in
-                    AccountListCell(account: account)
+                ForEach(accounts.indices, id: \.self) { index in
+                    AccountListCell(account: accounts[index])
                         .padding(.vertical, 6)
                 }
                 .onMove(perform: moveAccount)
@@ -36,14 +36,14 @@ struct PasswordListView: View {
                     Tools.shared.importPasswordsFromCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.down")
-                    Text("Import".localized)
+                    Text("Import")
                 }
                 
                 Button {
                     Tools.shared.exportPasswordsToCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.up")
-                    Text("Export".localized)
+                    Text("Export")
                 }
                 
                 Button {

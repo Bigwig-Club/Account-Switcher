@@ -25,16 +25,16 @@ struct EditAccountView: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack {
-                    Text("Custom Name".localized)
-                    TextField("".localized, text: $customName)
+                    Text("Custom Name")
+                    TextField("", text: $customName)
                 }
                 HStack {
                     Text("Apple ID")
-                    TextField("".localized, text: $account)
+                    TextField("", text: $account)
                 }
                 HStack {
-                    Text("Password".localized)
-                    TextField("".localized, text: $password)
+                    Text("Password")
+                    TextField("", text: $password)
                 }
             }
             
@@ -42,14 +42,14 @@ struct EditAccountView: View {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Cancel".localized)
+                    Text("Cancel")
                 }
                 .buttonStyle(CustomButtonStyle())
                 
                 Button {
                     saveAccount()
                 } label: {
-                    Text("Save".localized)
+                    Text("Save")
                 }
                 .buttonStyle(CustomButtonStyle())
                 .disabled(self.customName.isEmpty || self.account.isEmpty || self.password.isEmpty)
@@ -58,17 +58,17 @@ struct EditAccountView: View {
         .frame(width: 300, height: 100, alignment: .center)
         .padding()
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Duplicated Apple ID".localized), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one".localized), dismissButton: .cancel(Text("OK")))
+            Alert(title: Text("Duplicated Apple ID"), message: Text("You have already added this Apple ID, please try to add another Apple ID or edit this one"), dismissButton: .cancel(Text("OK")))
         }
         .onAppear {
             self.customName = selectedAccount.customName
             self.account = selectedAccount.account
             self.password = selectedAccount.password
-            self.index = accounts.firstIndex {$0.account == selectedAccount.account} ?? 0
+            self.index = accounts.firstIndex { $0.account == selectedAccount.account } ?? 0
         }
     }
     
-    func saveAccount() {
+    private func saveAccount() {
         accounts.removeAll {$0.account == self.selectedAccount.account}
         accounts.insert(Account(customName: self.customName, account: self.account, password: self.password), at: index)
         self.presentationMode.wrappedValue.dismiss()

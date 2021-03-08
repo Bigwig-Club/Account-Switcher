@@ -15,15 +15,15 @@ struct SidebarView: View {
     var body: some View {
         List {
             NavigationLink(destination: PasswordListView(isUnlocked: $isUnlocked), isActive: $isDefaultItemActive) {
-                Label("Password".localized, systemImage: "key")
+                Label("Password", systemImage: "key")
             }
             
             NavigationLink(destination: QuickLoginView()) {
-                Label("Quick Login".localized, systemImage: "bolt")
+                Label("Quick Login", systemImage: "bolt")
             }
             
             NavigationLink(destination: SettingsView()) {
-                Label("Settings".localized, systemImage: "gearshape")
+                Label("Settings", systemImage: "gearshape")
             }
         }
         .listStyle(SidebarListStyle())

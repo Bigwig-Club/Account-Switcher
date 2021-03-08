@@ -48,7 +48,7 @@ struct AccountListCell: View {
                     Button {
                         self.showEditAccountSheet.toggle()
                     } label: {
-                        Text("Edit".localized)
+                        Text("Edit")
                     }
                     .buttonStyle(CustomButtonStyle())
                     
@@ -56,7 +56,7 @@ struct AccountListCell: View {
                         //self.showAlert.toggle()
                         Tools.shared.switchAccount(account: account.account, password: account.password)
                     } label: {
-                        Text("Login".localized)
+                        Text("Login")
                     }
                     .buttonStyle(CustomButtonStyle())
                 }
@@ -76,7 +76,7 @@ struct AccountListCell: View {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.account, forType: .string)
             } label: {
-                Text("Copy Apple ID".localized)
+                Text("Copy Apple ID")
                 Image(systemName: "person.crop.circle")
             }
             
@@ -84,7 +84,7 @@ struct AccountListCell: View {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.password, forType: .string)
             } label: {
-                Text("Copy Password".localized)
+                Text("Copy Password")
                 Image(systemName: "key")
             }
         }
