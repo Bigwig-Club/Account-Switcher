@@ -5,22 +5,22 @@
 //  Created by Licardo on 2020/9/18.
 //
 
-import SwiftUI
 import Defaults
+import SwiftUI
 
 struct EditAccountView: View {
     var selectedAccount: Account
     @Default(.accounts) var accounts
-    
+
     @State private var customName = ""
     @State private var account = ""
     @State private var password = ""
     @State private var showAlert = false
-    
+
     @State private var index = 0
-    
+
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
         VStack {
             VStack(alignment: .trailing) {
@@ -37,7 +37,7 @@ struct EditAccountView: View {
                     TextField("", text: $password)
                 }
             }
-            
+
             HStack(spacing: 100) {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
@@ -45,7 +45,7 @@ struct EditAccountView: View {
                     Text("Cancel")
                 }
                 .buttonStyle(CustomButtonStyle())
-                
+
                 Button {
                     saveAccount()
                 } label: {
@@ -67,17 +67,17 @@ struct EditAccountView: View {
             self.index = accounts.firstIndex { $0.account == selectedAccount.account } ?? 0
         }
     }
-    
+
     private func saveAccount() {
-        accounts.removeAll {$0.account == self.selectedAccount.account}
-        accounts.insert(Account(customName: self.customName, account: self.account, password: self.password), at: index)
-        self.presentationMode.wrappedValue.dismiss()
+        accounts.removeAll { $0.account == self.selectedAccount.account }
+        accounts.insert(Account(customName: customName, account: account, password: password), at: index)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct EditAccountView_Previews: PreviewProvider {
     static let account = Account(customName: "中国 ID", account: "xxx@qq.com", password: "123123")
-    
+
     static var previews: some View {
         EditAccountView(selectedAccount: account)
     }

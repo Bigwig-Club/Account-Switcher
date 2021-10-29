@@ -10,7 +10,7 @@ import SwiftUI
 struct QuickLoginView: View {
     @State private var account = ""
     @State private var password = ""
-    
+
     var body: some View {
         ScrollView {
             VStack {
@@ -22,7 +22,7 @@ struct QuickLoginView: View {
                     Text("Password")
                     TextField("", text: $password)
                 }
-                
+
                 Button {
                     Tools.shared.switchAccount(account: account, password: password)
                 } label: {

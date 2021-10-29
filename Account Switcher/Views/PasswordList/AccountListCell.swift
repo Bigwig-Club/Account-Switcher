@@ -5,8 +5,8 @@
 //  Created by Licardo on 2020/9/17.
 //
 
-import SwiftUI
 import Defaults
+import SwiftUI
 
 struct AccountListCell: View {
     var account: Account
@@ -14,7 +14,7 @@ struct AccountListCell: View {
     @State private var showPassword = false
     @State private var showEditAccountSheet = false
     @State private var showAlert = false
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -22,7 +22,7 @@ struct AccountListCell: View {
                     .font(.title)
                 HStack {
                     Text(account.account)
-                    
+
                     Button {
                         self.showPassword.toggle()
                     } label: {
@@ -30,7 +30,7 @@ struct AccountListCell: View {
                             Text(account.password)
                         } else {
                             HStack(spacing: 0) {
-                                ForEach(0..<account.password.count) { _ in
+                                ForEach(0 ..< account.password.count) { _ in
                                     Text("*")
                                 }
                             }
@@ -40,9 +40,9 @@ struct AccountListCell: View {
                 }
                 .foregroundColor(.secondary)
             }
-            
+
             Spacer()
-            
+
             VStack(alignment: .trailing) {
                 HStack {
                     Button {
@@ -51,18 +51,18 @@ struct AccountListCell: View {
                         Text("Edit")
                     }
                     .buttonStyle(CustomButtonStyle())
-                    
+
                     Button {
-                        //self.showAlert.toggle()
+                        // self.showAlert.toggle()
                         Tools.shared.switchAccount(account: account.account, password: account.password)
                     } label: {
                         Text("Login")
                     }
                     .buttonStyle(CustomButtonStyle())
                 }
-                
+
                 Button {
-                    accounts.removeAll {$0.account == self.account.account}
+                    accounts.removeAll { $0.account == self.account.account }
                 } label: {
                     Image(systemName: "trash")
                         .font(.system(size: 15))
@@ -72,15 +72,15 @@ struct AccountListCell: View {
             }
         }
         .contextMenu {
-            Button{
+            Button {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.account, forType: .string)
             } label: {
                 Text("Copy Apple ID")
                 Image(systemName: "person.crop.circle")
             }
-            
-            Button{
+
+            Button {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(account.password, forType: .string)
             } label: {
@@ -108,7 +108,7 @@ struct AccountListCell: View {
 
 struct AccountListCell_Previews: PreviewProvider {
     static let account = Account(customName: "中国 ID", account: "xxx@qq.com", password: "123123")
-    
+
     static var previews: some View {
         AccountListCell(account: account)
     }

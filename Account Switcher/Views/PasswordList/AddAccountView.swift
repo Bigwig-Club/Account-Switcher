@@ -5,19 +5,19 @@
 //  Created by Licardo on 2020/9/17.
 //
 
-import SwiftUI
 import Defaults
+import SwiftUI
 
 struct AddAccountView: View {
     @Default(.accounts) var accounts
-    
+
     @State private var customName = ""
     @State private var account = ""
     @State private var password = ""
     @State private var showAlert = false
-    
+
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
         VStack {
             VStack(alignment: .trailing) {
@@ -34,7 +34,7 @@ struct AddAccountView: View {
                     TextField("", text: $password)
                 }
             }
-            
+
             HStack(spacing: 100) {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
@@ -42,7 +42,7 @@ struct AddAccountView: View {
                     Text("Cancel")
                 }
                 .buttonStyle(CustomButtonStyle())
-                
+
                 Button {
                     addAccount()
                 } label: {
@@ -58,13 +58,13 @@ struct AddAccountView: View {
         .frame(width: 300, height: 100, alignment: .center)
         .padding()
     }
-    
+
     func addAccount() {
-        if accounts.contains(where: {$0.account == self.account}) {
-            self.showAlert.toggle()
+        if accounts.contains(where: { $0.account == self.account }) {
+            showAlert.toggle()
         } else {
-            accounts.append(Account(customName: self.customName, account: self.account, password: self.password))
-            self.presentationMode.wrappedValue.dismiss()
+            accounts.append(Account(customName: customName, account: account, password: password))
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }

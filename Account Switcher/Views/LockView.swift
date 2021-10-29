@@ -5,20 +5,20 @@
 //  Created by Licardo on 2021/2/16.
 //
 
-import SwiftUI
-import LocalAuthentication
 import Defaults
+import LocalAuthentication
+import SwiftUI
 
 struct LockView: View {
     @Binding var isUnlocked: Bool
     @Default(.needAuthToUnlock) var needAuthToUnlock
-    
+
     var body: some View {
         VStack {
             Image(systemName: "lock.shield")
                 .foregroundColor(.red)
                 .font(.system(size: 150))
-            
+
             Button {
                 if needAuthToUnlock {
                     authenticate()
@@ -48,16 +48,16 @@ struct LockView: View {
             }
         }
     }
-    
+
     private func authenticate() {
         let context = LAContext()
         var error: NSError?
-        
+
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             let reason = "Please authenticate to unlock."
-            
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, authenticationError in
-                
+
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, _ in
+
                 DispatchQueue.main.async {
                     if success {
                         self.isUnlocked = true

@@ -6,24 +6,24 @@
 //
 
 import AppKit
-import Defaults
 import CSV
+import Defaults
 
 class Tools {
     static let shared = Tools()
 }
 
 // MARK: - switch account
+
 extension Tools {
     func switchAccount(account: String, password: String) {
-        
         let checkOptPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
         let options = [checkOptPrompt: true]
-        let isAppTrusted = AXIsProcessTrustedWithOptions(options as CFDictionary?);
+        let isAppTrusted = AXIsProcessTrustedWithOptions(options as CFDictionary?)
         guard isAppTrusted else {
             return
         }
-        
+
         let time = 1 / Defaults[.loginSpeed]
         let script = """
         tell application "App Store" to activate
@@ -48,17 +48,17 @@ extension Tools {
             keystroke return
         end tell
         """
-        
-        guard  let appleScript = NSAppleScript(source: script) else {
+
+        guard let appleScript = NSAppleScript(source: script) else {
             return
         }
         var errorInfo: NSDictionary?
         appleScript.executeAndReturnError(&errorInfo)
         if errorInfo != nil {
-            showErrorAlert(err: errorInfo as? [String : Any])
+            showErrorAlert(err: errorInfo as? [String: Any])
         }
     }
-    
+
     func showErrorAlert(err: [String: Any]?) {
         let alert = NSAlert()
         alert.messageText = (err?["NSAppleScriptErrorMessage"] as? String) ?? "Sorry, some errors occured. :(".localized
@@ -72,45 +72,47 @@ extension Tools {
 }
 
 // MARK: - export passwords to csv
+
 extension Tools {
     func exportPasswordsToCsv() {
         let csv = try! CSVWriter(stream: .toMemory())
         let accounts = Defaults[.accounts]
-        
+
         // Write a row
         try! csv.write(row: ["customName", "account", "password"])
-        
+
         accounts.forEach { account in
             csv.beginNewRow()
             try! csv.write(field: account.customName)
             try! csv.write(field: account.account)
             try! csv.write(field: account.password)
         }
-        
+
         csv.stream.close()
-        
+
         // Get a String
         let csvData = csv.stream.property(forKey: .dataWrittenToMemoryStreamKey) as! Data
-        NSSavePanel.saveCsv(csvData) { (_) in }
+        NSSavePanel.saveCsv(csvData) { _ in }
     }
 }
 
 // MARK: - import passwords from csv
+
 extension Tools {
     func importPasswordsFromCsv() {
-        NSOpenPanel.openCsv { (result) in
+        NSOpenPanel.openCsv { result in
             if case let .success(url) = result, let stream = InputStream(url: url) {
                 var newAccounts: [Account] = []
-                
+
                 do {
                     let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
-                    
+
                     let decoder = CSVRowDecoder()
                     while csv.next() != nil {
                         let row = try decoder.decode(Account.self, from: csv)
                         newAccounts.append(row)
                     }
-                    
+
                     let accountsSet = Set(Defaults[.accounts])
                     let all = accountsSet.union(Set(newAccounts))
                     Defaults[.accounts] = Array(all)

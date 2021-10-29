@@ -5,14 +5,14 @@
 //  Created by Licardo on 2021/2/16.
 //
 
-import SwiftUI
 import Defaults
+import SwiftUI
 
 struct PasswordListView: View {
     @Default(.accounts) var accounts
     @State private var showAddAccountSheet = false
     @Binding var isUnlocked: Bool
-    
+
     var body: some View {
         List {
             if accounts.count == 0 {
@@ -32,27 +32,29 @@ struct PasswordListView: View {
         }
         .toolbar {
             ToolbarItemGroup {
+                Spacer()
+                
                 Button {
                     Tools.shared.importPasswordsFromCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.down")
                     Text("Import")
                 }
-                
+
                 Button {
                     Tools.shared.exportPasswordsToCsv()
                 } label: {
                     Image(systemName: "square.and.arrow.up")
                     Text("Export")
                 }
-                
+
                 Button {
                     isUnlocked = false
                 } label: {
                     Image(systemName: "lock.fill")
                         .font(.system(size: 15))
                 }
-                
+
                 Button {
                     self.showAddAccountSheet.toggle()
                 } label: {
@@ -62,15 +64,15 @@ struct PasswordListView: View {
             }
         }
     }
-    
+
     private func moveAccount(indexSet: IndexSet, destination: Int) {
         let source = indexSet.first!
         let movingAccount = accounts[source]
         if source < destination { // 从上往下移动
-            accounts.removeAll {$0.account == movingAccount.account}
+            accounts.removeAll { $0.account == movingAccount.account }
             accounts.insert(movingAccount, at: destination - 1)
         } else if source > destination { // 从下往上移动
-            accounts.removeAll {$0.account == movingAccount.account}
+            accounts.removeAll { $0.account == movingAccount.account }
             accounts.insert(movingAccount, at: destination)
         }
     }
